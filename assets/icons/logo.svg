@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" role="img" aria-labelledby="title desc">
+  <title id="title">Simpson Singing School</title>
+  <desc id="desc">A treble clef and piano keys beside the school name.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#d19a39"/>
+      <stop offset="1" stop-color="#f1d89a"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10 20) scale(.78)">
+    <path d="M76 11c-32 34-45 75-20 104 20 23 61 14 61-18 0-27-35-40-52-20-13 15-3 40 18 38 20-2 23-27 8-36" fill="none" stroke="#0c6270" stroke-width="8" stroke-linecap="round"/>
+    <path d="M77 10v126c0 20-11 34-29 34-17 0-27-11-27-24 0-12 9-22 22-22 12 0 21 8 21 19" fill="none" stroke="#0c6270" stroke-width="8" stroke-linecap="round"/>
+    <path d="M112 55c36-16 78-9 104 9" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+    <g transform="translate(113 51) rotate(8)">
+      <rect x="0" y="0" width="103" height="39" rx="8" fill="#fffaf0" stroke="#d2a14f" stroke-width="3"/>
+      <path d="M17 1v38M34 1v38M51 1v38M68 1v38M85 1v38" stroke="#d2a14f" stroke-width="2"/>
+      <path d="M11 1h10v24H11zM29 1h10v24H29zM63 1h10v24H63zM81 1h10v24H81z" fill="#0c6270"/>
+    </g>
+    <path d="M103 105c55-27 110-24 145 0" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <circle cx="236" cy="32" r="4" fill="#d2a14f"/>
+    <circle cx="251" cy="45" r="2.8" fill="#d2a14f"/>
+  </g>
+  <text x="400" y="65" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="52" fill="#0c6270">Simpson</text>
+  <text x="400" y="111" text-anchor="middle" font-family="Georgia, serif" font-weight="700" letter-spacing="3" font-size="30" fill="#073f51">SINGING SCHOOL</text>
+  <text x="400" y="141" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing=".5" fill="#86611f">Find Your Voice. Sing with Confidence.</text>
+</svg>
