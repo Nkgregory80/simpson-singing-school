@@ -60,7 +60,7 @@ enquiryForm?.addEventListener('submit', event => {
 
   enquiryText = `Hello Morag,\n\n${message}\n\nInterest: ${interest}\nName: ${firstName} ${lastName}\nEmail: ${email}`;
   const subject = `Lesson enquiry from ${firstName} ${lastName}`;
-  const mailto = `mailto:morag@simplysingingschool.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiryText)}`;
+  const mailto = `mailto:Simpsonmorag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiryText)}`;
 
   formStatus.hidden = false;
   window.location.href = mailto;

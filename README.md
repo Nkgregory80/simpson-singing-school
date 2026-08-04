@@ -22,17 +22,24 @@ For an easy local preview, install the **Live Server** extension in Visual Studi
 - `assets/icons/favicon.svg` — browser tab icon
 - `assets/images/morag-portrait.jpg` — main portrait
 - `assets/images/morag-piano.jpg` — piano image
+- `assets/images/white-grand-piano.jpg` and `assets/images/yamaha-piano.jpg` — gallery images
+- `assets/images/musical-midgies-badge.jpg` — children’s choir badge
+- `assets/videos/music-making.mp4` — self-hosted gallery video
 
 ## Details to check before publishing
 
-- The supplied email address is `morag@simplysingingschool.co.uk`. Confirm this is still correct now the name has changed from Simply Singing School to Simpson Singing School.
-- Confirm choir prices and exact session times. The site currently says to contact Morag for availability.
+- Contact email: `Simpsonmorag@gmail.com`.
 - Confirm whether displaying the full postcode is appropriate. It currently gives the general location as Westhill, Aberdeen AB32 6PY.
-- Add a privacy notice before collecting information through a hosted contact form.
+- Confirm written permission to publish identifiable people shown in photographs and video.
+- Review the privacy and cookie policies before adding a hosted form, analytics, embedded media or other third-party services.
 
 ## Contact form
 
 The included form prepares a pre-addressed message and opens the visitor’s email application. If that is unavailable, the visitor can copy the complete enquiry and send it manually. The website does not store or transmit form data itself.
+
+## Policies and cookies
+
+The footer links to the privacy notice, cookie policy, website terms, safeguarding policy and accessibility statement. The site does not currently set cookies or use analytics, advertising pixels, social media plugins or embedded third-party media, so it deliberately does not show a cookie consent banner. Update the cookie and privacy policies and add consent controls before introducing any non-essential tracking technology.
 
 A better hosted option is Formspree, Basin or Netlify Forms. After choosing a provider, add its form action in `index.html` and update the submit handler in `script.js`:
 
