@@ -18,6 +18,9 @@ For an easy local preview, install the **Live Server** extension in Visual Studi
 - `index.html` — all page wording and sections
 - `styles.css` — colours, layout, fonts and mobile design
 - `script.js` — mobile menu, current year and subtle reveal effects
+- `CNAME` — GitHub Pages custom domain (`simpson-singing.school`)
+- `robots.txt` and `sitemap.xml` — search crawler discovery
+- `llms.txt` — concise, verified facts for AI systems and other machine readers
 - `assets/icons/logo.svg` — editable vector logo
 - `assets/icons/favicon.svg` — browser tab icon
 - `assets/images/morag-portrait.jpg` — main portrait
@@ -58,7 +61,11 @@ A better hosted option is Formspree, Basin or Netlify Forms. After choosing a pr
 
 ## Custom domain
 
-When the final domain is purchased, add it in **Settings → Pages → Custom domain** and follow GitHub’s DNS instructions. A domain such as `simpsonsingingschool.co.uk` should be checked for availability before purchase.
+The configured public domain is `https://simpson-singing.school/`. The root `CNAME` file preserves this setting during GitHub Pages deployments. The domain’s DNS should point to GitHub Pages and **Enforce HTTPS** should be enabled in the repository’s Pages settings.
+
+## Search and AI discovery
+
+The homepage includes canonical, Open Graph and Schema.org `MusicSchool` metadata. `robots.txt` permits crawling, `sitemap.xml` lists all public pages, and `llms.txt` provides a concise factual summary. Update the schema, sitemap dates and `llms.txt` whenever prices, contact details, services or choir schedules change.
 
 ## Brand colours
 
