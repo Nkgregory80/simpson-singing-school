@@ -16,8 +16,12 @@ For an easy local preview, install the **Live Server** extension in Visual Studi
 ## Main files
 
 - `index.html` — all page wording and sections
+- `events.html` — public events listing plus admin event editor UI
 - `styles.css` — colours, layout, fonts and mobile design
 - `script.js` — mobile menu, current year and subtle reveal effects
+- `events.js` — event loading and admin event management interactions
+- `assets/data/events.seed.json` — fallback event data used before storage is configured
+- `api/events.js` and `api/admin/*.js` — Vercel serverless APIs for event read/write and admin auth
 - `CNAME` — GitHub Pages custom domain (`simpson-singing.school`)
 - `robots.txt` and `sitemap.xml` — search crawler discovery
 - `llms.txt` — concise, verified facts for AI systems and other machine readers
@@ -39,6 +43,21 @@ For an easy local preview, install the **Live Server** extension in Visual Studi
 ## Contact form
 
 The included form prepares a pre-addressed message and opens the visitor’s email application. If that is unavailable, the visitor can copy the complete enquiry and send it manually. The website does not store or transmit form data itself.
+
+## Events admin setup (for Vercel deployments)
+
+The public events page (`events.html`) can run without backend configuration, but admin editing requires Vercel server-side environment variables so secrets stay out of client code.
+
+Set these environment variables in Vercel:
+
+- `ADMIN_USERNAME` (optional, default `admin`)
+- `ADMIN_PASSWORD` (required)
+- `ADMIN_SESSION_SECRET` (required, random long string)
+- `KV_REST_API_URL` (required for persistence)
+- `KV_REST_API_TOKEN` (required for persistence)
+- `EVENTS_KV_KEY` (optional custom key name)
+
+When KV variables are configured, admins can sign in from `events.html` and create, edit, delete events, including optional PayPal links per event.
 
 ## Policies and cookies
 
