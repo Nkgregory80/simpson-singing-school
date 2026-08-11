@@ -2,9 +2,11 @@ const EVENTS_API = '/api/events';
 const ADMIN_LOGIN_API = '/api/admin/login';
 const ADMIN_EVENTS_API = '/api/admin/events';
 const ADMIN_TOKEN_KEY = 'simpsonEventsAdminToken';
+const ADMIN_PANEL_HASH = '#event-admin';
 
 const publicStatus = document.getElementById('events-public-status');
 const eventsList = document.getElementById('events-list');
+const adminPanel = document.getElementById('admin-panel');
 const adminAuth = document.getElementById('admin-auth');
 const adminEditor = document.getElementById('admin-editor');
 const loginForm = document.getElementById('admin-login-form');
@@ -18,6 +20,11 @@ const adminEventsList = document.getElementById('admin-events-list');
 let events = [];
 let writable = false;
 let adminToken = localStorage.getItem(ADMIN_TOKEN_KEY) || '';
+const adminPanelEnabled = (window.location.hash || '').toLowerCase() === ADMIN_PANEL_HASH;
+
+if (adminPanelEnabled && adminPanel) {
+  adminPanel.hidden = false;
+}
 
 const escapeHtml = value => String(value)
   .replaceAll('&', '&amp;')
@@ -68,7 +75,7 @@ const renderPublicEvents = () => {
 };
 
 const renderAdminEvents = () => {
-  if (!adminEventsList) return;
+  if (!adminPanelEnabled || !adminEventsList) return;
 
   if (!events.length) {
     adminEventsList.innerHTML = '<li class="events-empty">No events created yet.</li>';
@@ -137,7 +144,7 @@ const fetchEvents = async () => {
     renderPublicEvents();
     renderAdminEvents();
     setStatus(publicStatus, '');
-    if (!writable) {
+    if (adminPanelEnabled && !writable) {
       setStatus(loginStatus, 'Event editing is disabled until server environment variables are configured.', true);
     }
   } catch {
@@ -296,6 +303,11 @@ adminEventsList?.addEventListener('click', async event => {
 });
 
 const initializeAdminState = () => {
+  if (!adminPanelEnabled) {
+    toggleAdminView(false);
+    return;
+  }
+
   if (!writable) {
     adminToken = '';
     localStorage.removeItem(ADMIN_TOKEN_KEY);

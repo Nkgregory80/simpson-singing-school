@@ -57,7 +57,7 @@ Set these environment variables in Vercel:
 - `KV_REST_API_TOKEN` (required for persistence)
 - `EVENTS_KV_KEY` (optional custom key name)
 
-When KV variables are configured, admins can sign in from `events.html` and create, edit, delete events, including optional PayPal links per event.
+When KV variables are configured, admins can sign in from the private URL `events.html#event-admin` and create, edit, delete events, including optional PayPal links per event.
 
 ## Policies and cookies
 

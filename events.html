@@ -56,14 +56,21 @@
       </div>
     </section>
 
-    <section class="events-section admin-section" aria-labelledby="admin-panel-title">
+    <section id="admin-panel" class="events-section admin-section" aria-labelledby="admin-panel-title" hidden>
       <div class="container">
         <div class="section-heading reveal">
-          <h2 id="admin-panel-title">Admin event management</h2>
-          <p>Authorized users can sign in to add, edit, or remove events.</p>
+          <h2 id="admin-panel-title">Private admin event management</h2>
+          <p>This section is only for trusted event admins using the private admin link.</p>
         </div>
 
         <div id="admin-auth" class="admin-card">
+          <h3>Quick guide</h3>
+          <ol>
+            <li>Open your private admin link (it ends with <code>#event-admin</code>).</li>
+            <li>Sign in using the username and password shared with you.</li>
+            <li>Add, edit, or delete events, then sign out when finished.</li>
+          </ol>
+          <p>If sign-in fails, check your details carefully and ask the site owner to confirm your login details.</p>
           <form id="admin-login-form" class="admin-form" novalidate>
             <label>Username<input type="text" name="username" autocomplete="username" required></label>
             <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
