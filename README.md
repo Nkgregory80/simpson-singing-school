@@ -42,7 +42,7 @@ The included form prepares a pre-addressed message and opens the visitor’s ema
 
 ## Policies and cookies
 
-The footer links to the privacy notice, cookie policy, website terms, safeguarding policy and accessibility statement. The site does not currently set cookies or use analytics, advertising pixels, social media plugins or embedded third-party media, so it deliberately does not show a cookie consent banner. Update the cookie and privacy policies and add consent controls before introducing any non-essential tracking technology.
+The footer links to the privacy notice, cookie policy, website terms, safeguarding policy and accessibility statement. The site now uses cookieless Vercel Web Analytics to measure page views and selected contact or booking interactions, without adding a cookie banner. Vercel Analytics only records traffic when the site is deployed through Vercel. If you introduce any additional non-essential tracking technology that relies on cookies or equivalent storage, update the privacy and cookie policies and add consent controls first.
 
 A better hosted option is Formspree, Basin or Netlify Forms. After choosing a provider, add its form action in `index.html` and update the submit handler in `script.js`:
 

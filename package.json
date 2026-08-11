@@ -1,0 +1,9 @@
+{
+  "name": "simpson-singing-school",
+  "version": "1.0.0",
+  "description": "A simple, responsive one-page website built with plain HTML, CSS and JavaScript. It works well with GitHub, Visual Studio Code and GitHub Pages, with no build tools required.",
+  "private": true,
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

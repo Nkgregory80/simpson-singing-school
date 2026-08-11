@@ -1,5 +1,14 @@
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.site-nav');
+const trackAnalyticsEvent = (name, data = {}) => {
+  if (typeof window.va !== 'function') return;
+
+  const payload = { name };
+  Object.entries(data).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') payload[key] = value;
+  });
+  window.va('event', payload);
+};
 
 const closeMenu = () => {
   nav?.classList.remove('open');
@@ -37,9 +46,35 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+  const trackedViewObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        trackAnalyticsEvent('section_view', { section: entry.target.dataset.trackView });
+        trackedViewObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  document.querySelectorAll('[data-track-view]').forEach(element => trackedViewObserver.observe(element));
 } else {
   document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+  document.querySelectorAll('[data-track-view]').forEach(element => {
+    trackAnalyticsEvent('section_view', { section: element.dataset.trackView });
+  });
 }
+
+document.addEventListener('click', event => {
+  if (!(event.target instanceof Element)) return;
+
+  const trackedElement = event.target.closest('[data-track-event]');
+  if (!trackedElement) return;
+
+  trackAnalyticsEvent(trackedElement.dataset.trackEvent, {
+    label: trackedElement.dataset.trackLabel,
+    location: trackedElement.dataset.trackLocation
+  });
+});
 
 const enquiryForm = document.getElementById('enquiry-form');
 const formStatus = document.getElementById('form-status');
@@ -63,6 +98,7 @@ enquiryForm?.addEventListener('submit', event => {
   const mailto = `mailto:Simpsonmorag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiryText)}`;
 
   formStatus.hidden = false;
+  trackAnalyticsEvent('booking_enquiry_prepared', { interest, location: 'contact_form' });
   window.location.href = mailto;
 });
 
