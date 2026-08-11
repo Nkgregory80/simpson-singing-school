@@ -1,0 +1,24 @@
+{
+  "name": "simpson-singing-school",
+  "version": "1.0.0",
+  "description": "Simpson Singing School website with Vercel Web Analytics",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "dev": "npx http-server -p 3000",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "music",
+    "education",
+    "singing",
+    "piano"
+  ],
+  "author": "Simpson Singing School",
+  "license": "UNLICENSED",
+  "private": true
+}
