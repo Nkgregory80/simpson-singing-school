@@ -26,3 +26,32 @@
 .form-status a{color:var(--teal-dark);font-weight:800}
 .form-status .button{padding:10px 16px}
 @media(max-width:560px){.button{width:100%}.form-status .button{width:auto}}
+
+/* Events page */
+.events-section{padding:0 0 90px}
+.events-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.event-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(7,63,81,.08);overflow:hidden}
+.event-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.event-card-body{padding:24px}
+.event-card-body h3{margin-top:0}
+.event-card-body .button{margin-top:8px}
+.event-meta{margin:.2em 0}
+.events-status{margin:0 0 16px;min-height:1.4em;color:var(--muted);font-weight:700}
+.status-error{color:#8b1d24}
+.status-success{color:var(--teal-dark)}
+.events-empty{padding:18px;border-left:4px solid var(--gold);background:var(--cream);border-radius:6px;margin:0}
+.admin-section{padding-top:0}
+.admin-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(7,63,81,.08);padding:24px}
+.admin-card+.admin-card{margin-top:20px}
+.admin-form label{display:grid;gap:7px;font-weight:800;margin-bottom:14px;color:var(--teal-dark)}
+.admin-actions{display:flex;gap:12px;flex-wrap:wrap}
+.admin-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.admin-toolbar p{margin:0;font-weight:700}
+.admin-events-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.admin-events-list li{display:flex;justify-content:space-between;gap:14px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--cream)}
+.admin-events-list li p{margin:.2em 0 0;color:var(--muted)}
+.admin-list-actions{display:flex;gap:8px;flex-wrap:wrap}
+.admin-list-actions .button{padding:8px 12px}
+
+@media(max-width:900px){.events-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.admin-card{padding:18px}.admin-events-list li{align-items:flex-start;flex-direction:column}.admin-list-actions .button{width:auto}}

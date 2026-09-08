@@ -1,0 +1,22 @@
+[
+  {
+    "id": "launch-2026",
+    "title": "Autumn Choir Launch Evening",
+    "date": "2026-09-01",
+    "time": "7:00–8:15 pm",
+    "location": "Kirkton of Skene Church, Westhill",
+    "description": "Meet Morag, hear all choir options, and join an informal sing-through before the new term begins.",
+    "image": "assets/images/morag-portrait.jpg",
+    "paypalLink": ""
+  },
+  {
+    "id": "concert-2027",
+    "title": "Spring Showcase Concert",
+    "date": "2027-05-09",
+    "time": "6:30 pm",
+    "location": "Westhill Community Church",
+    "description": "An evening performance featuring children's and adult choirs celebrating the year’s repertoire.",
+    "image": "assets/images/musical-midgies-badge.jpg",
+    "paypalLink": ""
+  }
+]

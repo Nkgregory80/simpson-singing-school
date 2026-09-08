@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Upcoming choir and singing events for Simpson Singing School in Westhill and Aberdeen.">
+  <meta name="theme-color" content="#0c6270">
+  <meta name="robots" content="index, follow">
+  <title>Events | Simpson Singing School</title>
+  <link rel="canonical" href="https://simpson-singing.school/events.html">
+  <link rel="sitemap" type="application/xml" href="https://simpson-singing.school/sitemap.xml">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="events.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Simpson Singing School home">
+        <img src="assets/icons/logo.svg" alt="Simpson Singing School — Find Your Voice. Sing with Confidence.">
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#lessons">Lessons</a>
+        <a href="events.html" aria-current="page">Events</a>
+        <a href="index.html#choirs">Choirs</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy-main" id="main">
+    <header class="policy-hero">
+      <div class="container">
+        <p class="eyebrow">What's on</p>
+        <h1>Upcoming events</h1>
+        <p class="policy-summary">Find upcoming Simpson Singing School events, concerts and choir sessions.</p>
+      </div>
+    </header>
+
+    <section class="events-section" aria-live="polite">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>Public event listings</h2>
+          <p>Event updates are shown here as soon as they are published.</p>
+        </div>
+
+        <p id="events-public-status" class="events-status" role="status" aria-live="polite"></p>
+        <div id="events-list" class="events-grid"></div>
+      </div>
+    </section>
+
+    <section id="admin-panel" class="events-section admin-section" aria-labelledby="admin-panel-title" hidden>
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 id="admin-panel-title">Private admin event management</h2>
+          <p>This section is only for trusted event admins using the private admin link.</p>
+        </div>
+
+        <div id="admin-auth" class="admin-card">
+          <h3>Quick guide</h3>
+          <ol>
+            <li>Open your private admin link (it ends with <code>#event-admin</code>).</li>
+            <li>Sign in using the username and password shared with you.</li>
+            <li>Add, edit, or delete events, then sign out when finished.</li>
+          </ol>
+          <p>If sign-in fails, check your details carefully and ask the site owner to confirm your login details.</p>
+          <form id="admin-login-form" class="admin-form" novalidate>
+            <label>Username<input type="text" name="username" autocomplete="username" required></label>
+            <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+            <button class="button button-primary" type="submit">Sign in</button>
+          </form>
+          <p id="admin-login-status" class="events-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div id="admin-editor" class="admin-card" hidden>
+          <div class="admin-toolbar">
+            <p>You are signed in as an event admin.</p>
+            <button id="admin-signout" class="button button-secondary" type="button">Sign out</button>
+          </div>
+
+          <form id="event-form" class="admin-form" novalidate>
+            <input type="hidden" name="id">
+            <label>Title<input type="text" name="title" required maxlength="120"></label>
+            <div class="field-row">
+              <label>Date<input type="date" name="date" required></label>
+              <label>Time<input type="text" name="time" required placeholder="e.g. 7:00–8:15 pm"></label>
+            </div>
+            <label>Location<input type="text" name="location" required maxlength="180"></label>
+            <label>Description<textarea name="description" rows="4" required maxlength="500"></textarea></label>
+            <label>Image URL (optional)<input type="url" name="image" placeholder="https://..."></label>
+            <label>PayPal link (optional)<input type="url" name="paypalLink" placeholder="https://paypal.me/... or https://www.paypal.com/..." pattern="https://.*paypal\..*"></label>
+
+            <div class="admin-actions">
+              <button class="button button-primary" type="submit">Save event</button>
+              <button id="event-cancel-edit" class="button button-secondary" type="button">Cancel edit</button>
+            </div>
+          </form>
+
+          <p id="admin-editor-status" class="events-status" role="status" aria-live="polite"></p>
+
+          <div class="admin-events-list-wrap">
+            <h3>Existing events</h3>
+            <ul id="admin-events-list" class="admin-events-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <img src="assets/icons/logo.svg" alt="" aria-hidden="true">
+      <div><strong>Simpson Singing School</strong><p>Singing, piano and choirs across Aberdeen and Aberdeenshire.</p></div>
+      <p>© <span id="year"></span> Simpson Singing School</p>
+    </div>
+    <nav class="footer-links" aria-label="Policies">
+      <a href="index.html">Home</a>
+      <a href="events.html" aria-current="page">Events</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="cookies.html">Cookies</a>
+      <a href="terms.html">Website terms</a>
+      <a href="safeguarding.html">Safeguarding</a>
+      <a href="accessibility.html">Accessibility</a>
+    </nav>
+  </footer>
+</body>
+</html>
