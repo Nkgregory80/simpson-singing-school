@@ -27,6 +27,7 @@ For an easy local preview, install the **Live Server** extension in Visual Studi
 - `assets/images/morag-piano.jpg` — piano image
 - `assets/images/white-grand-piano.jpg` and `assets/images/yamaha-piano.jpg` — gallery images
 - `assets/images/musical-midgies-badge.jpg` — children’s choir badge
+- `assets/images/bella-singing-lesson.jpg` — singing scholarship photo
 - `assets/videos/music-making.mp4` — self-hosted gallery video
 
 ## Details to check before publishing
